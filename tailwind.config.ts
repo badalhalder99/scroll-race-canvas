@@ -13,6 +13,9 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        'racing': ['Staatliches', 'cursive'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -57,6 +60,9 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        'race-text': "hsl(var(--race-text))",
+        'race-text-special': "hsl(var(--race-text-special))",
+        'space-light': "hsl(var(--space-light))",
       },
       borderRadius: {
         lg: "var(--radius)",
