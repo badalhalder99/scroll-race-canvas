@@ -50,34 +50,17 @@ const HorizontalScrollRaces = () => {
 
   return (
     <>
-      {/* Spacer before races */}
-      <div className="h-[50vh] bg-space-light"></div>
+      <div className="space-50vh lightBG"></div>
       
-      {/* Horizontal scroll section */}
-      <div ref={wrapperRef} className="overflow-hidden">
-        <div 
-          ref={racesRef}
-          className="flex whitespace-nowrap w-fit"
-        >
-          {races.map((race, index) => (
-            <h2 
-              key={race}
-              className={`
-                font-racing text-[30vw] flex-shrink-0 px-[0.3em] m-0 leading-none
-                ${index === races.length - 1 
-                  ? 'bg-accent text-race-text-special' 
-                  : 'text-race-text'
-                }
-              `}
-            >
-              {race}
-            </h2>
+      <div ref={wrapperRef} className="racesWrapper">
+        <div ref={racesRef} className="races">
+          {races.map((race) => (
+            <h2 key={race}>{race}</h2>
           ))}
         </div>
       </div>
       
-      {/* Spacer after races */}
-      <div className="h-[100vh] bg-space-light"></div>
+      <div className="space-100vh lightBG"></div>
     </>
   );
 };
