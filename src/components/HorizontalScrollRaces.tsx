@@ -5,11 +5,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const races = [
-  'Monaco',
-  'Austria', 
-  'Hungary',
-  'Netherlands',
-  'Japan'
+  { name: 'Monaco', image: 'https://picsum.photos/800/600?random=1' },
+  { name: 'Austria', image: 'https://picsum.photos/800/600?random=2' },
+  { name: 'Hungary', image: 'https://picsum.photos/800/600?random=3' },
+  { name: 'Netherlands', image: 'https://picsum.photos/800/600?random=4' },
+  { name: 'Japan', image: 'https://picsum.photos/800/600?random=5' }
 ];
 
 const HorizontalScrollRaces = () => {
@@ -54,8 +54,10 @@ const HorizontalScrollRaces = () => {
       
       <div ref={wrapperRef} className="racesWrapper">
         <div ref={racesRef} className="races">
-          {races.map((race) => (
-            <h2 key={race}>{race}</h2>
+          {races.map((race, index) => (
+            <div key={race.name} className={`race-item ${index === races.length - 1 ? 'last-race' : ''}`}>
+              <img src={race.image} alt={race.name} />
+            </div>
           ))}
         </div>
       </div>

@@ -12,20 +12,22 @@ body {
   flex-wrap: nowrap;
 }
 
-.races h2 {
-  font-family: 'Staatliches', cursive;
-  font-size: 30vw;
+.race-item {
   flex-shrink: 0;
-  padding-right: 0.3em;
-  padding-left: 0.3em;
-  color: #e10600;
-  margin: 0;
-  line-height: 1;
+  margin-right: 2rem;
+  height: 80vh;
+  width: 60vw;
 }
 
-.races h2:last-of-type {
-  background: #e1e1ff;
-  color: #15151e;
+.race-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.race-item.last-race img {
+  border: 4px solid #e1e1ff;
 }
 
 .lightBG {
