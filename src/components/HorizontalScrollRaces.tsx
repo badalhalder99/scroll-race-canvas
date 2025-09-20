@@ -9,6 +9,14 @@ const images = [
   'https://picsum.photos/800/1200?random=2',
   'https://picsum.photos/800/1200?random=3',
   'https://picsum.photos/800/1200?random=4',
+  'https://picsum.photos/800/1200?random=4',
+  'https://picsum.photos/800/1200?random=4',
+  'https://picsum.photos/800/1200?random=4',
+  'https://picsum.photos/800/1200?random=4',
+  'https://picsum.photos/800/1200?random=4',
+  'https://picsum.photos/800/1200?random=4',
+  'https://picsum.photos/800/1200?random=4',
+  'https://picsum.photos/800/1200?random=4',
   'https://picsum.photos/800/1200?random=5'
 ];
 
