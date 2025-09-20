@@ -50,13 +50,6 @@ const HorizontalScrollRaces = () => {
 
   return (
     <div ref={wrapperRef} className="gallery-wrapper">
-      <div className="title-section">
-        <h1 className="title">
-          Shifting Realities:
-          <br />
-          A Visual Journey
-        </h1>
-      </div>
       <div ref={galleryRef} className="gallery">
         {images.map((image, index) => (
           <div key={index} className="gallery-item">

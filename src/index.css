@@ -21,33 +21,12 @@ body {
   position: relative;
 }
 
-.title-section {
-  position: fixed;
-  left: 60px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-  background: rgba(245, 245, 247, 0.9);
-  backdrop-filter: blur(10px);
-  padding: 40px;
-  border-radius: 20px;
-}
-
-.title {
-  font-size: 3rem;
-  font-weight: 300;
-  color: #1d1d1f;
-  line-height: 1.2;
-  font-style: italic;
-  letter-spacing: -0.02em;
-}
-
 .gallery {
   display: flex;
   height: 100vh;
   align-items: center;
   width: fit-content;
-  padding-left: 400px;
+  padding-left: 60px;
 }
 
 .gallery-item {
