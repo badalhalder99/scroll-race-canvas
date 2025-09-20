@@ -4,30 +4,30 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const races = [
-  { name: 'Monaco', image: 'https://picsum.photos/800/600?random=1' },
-  { name: 'Austria', image: 'https://picsum.photos/800/600?random=2' },
-  { name: 'Hungary', image: 'https://picsum.photos/800/600?random=3' },
-  { name: 'Netherlands', image: 'https://picsum.photos/800/600?random=4' },
-  { name: 'Japan', image: 'https://picsum.photos/800/600?random=5' }
+const images = [
+  'https://picsum.photos/800/1200?random=1',
+  'https://picsum.photos/800/1200?random=2',
+  'https://picsum.photos/800/1200?random=3',
+  'https://picsum.photos/800/1200?random=4',
+  'https://picsum.photos/800/1200?random=5'
 ];
 
 const HorizontalScrollRaces = () => {
-  const racesRef = useRef<HTMLDivElement>(null);
+  const galleryRef = useRef<HTMLDivElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const racesElement = racesRef.current;
+    const galleryElement = galleryRef.current;
     const wrapperElement = wrapperRef.current;
 
-    if (!racesElement || !wrapperElement) return;
+    if (!galleryElement || !wrapperElement) return;
 
     const getScrollAmount = () => {
-      const racesWidth = racesElement.scrollWidth;
-      return -(racesWidth - window.innerWidth);
+      const galleryWidth = galleryElement.scrollWidth;
+      return -(galleryWidth - window.innerWidth);
     };
 
-    const tween = gsap.to(racesElement, {
+    const tween = gsap.to(galleryElement, {
       x: getScrollAmount,
       duration: 3,
       ease: "none",
@@ -35,7 +35,7 @@ const HorizontalScrollRaces = () => {
 
     const scrollTrigger = ScrollTrigger.create({
       trigger: wrapperElement,
-      start: "top 20%",
+      start: "top top",
       end: () => `+=${getScrollAmount() * -1}`,
       pin: true,
       animation: tween,
@@ -49,21 +49,22 @@ const HorizontalScrollRaces = () => {
   }, []);
 
   return (
-    <>
-      <div className="space-50vh lightBG"></div>
-      
-      <div ref={wrapperRef} className="racesWrapper">
-        <div ref={racesRef} className="races">
-          {races.map((race, index) => (
-            <div key={race.name} className={`race-item ${index === races.length - 1 ? 'last-race' : ''}`}>
-              <img src={race.image} alt={race.name} />
-            </div>
-          ))}
-        </div>
+    <div ref={wrapperRef} className="gallery-wrapper">
+      <div className="title-section">
+        <h1 className="title">
+          Shifting Realities:
+          <br />
+          A Visual Journey
+        </h1>
       </div>
-      
-      <div className="space-100vh lightBG"></div>
-    </>
+      <div ref={galleryRef} className="gallery">
+        {images.map((image, index) => (
+          <div key={index} className="gallery-item">
+            <img src={image} alt={`Gallery image ${index + 1}`} />
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };
 
